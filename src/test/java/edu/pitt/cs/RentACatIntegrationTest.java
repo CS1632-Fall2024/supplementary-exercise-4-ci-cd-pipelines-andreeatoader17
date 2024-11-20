@@ -338,8 +338,7 @@ public class RentACatIntegrationTest {
 	// 	c.setAccessible(true);
 	// 	Cat rent = (Cat) c.invoke(r, 2);
 
-	// 	Method s = rent.getClass().getDeclaredMethod("isRented");
-	// 	s.setAccessible(true);
+
 	// 	assertTrue((Boolean) s.invoke(rent));
 
 	// 	out.reset();
@@ -384,7 +383,6 @@ public class RentACatIntegrationTest {
 	// 	c.setAccessible(true);
 	// 	Cat rent = (Cat) c.invoke(r, 2);
 
-	// 	Method s = rent.getClass().getDeclaredMethod("isRented");
 	// 	s.setAccessible(true);
 	// 	assertTrue((Boolean) s.invoke(rent));
 
@@ -426,7 +424,6 @@ public class RentACatIntegrationTest {
 	// 	c.setAccessible(true);
 	// 	Cat rent = (Cat) c.invoke(r, 2);
 
-	// 	Method s = rent.getClass().getDeclaredMethod("isRented");
 	// 	s.setAccessible(true);
 	// 	assertFalse((Boolean) s.invoke(rent));
 
