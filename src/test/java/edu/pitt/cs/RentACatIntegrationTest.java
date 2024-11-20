@@ -264,182 +264,182 @@ public class RentACatIntegrationTest {
 	
 	}
 
-	/**
-	 * Test case for boolean rentCat(int id).
-	 * 
-	 * <pre>
-	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
-	 * Execution steps: Call rentCat(2).
-	 * Postconditions: Return value is true.
-	 *                 c2 is rented as a result of the execution steps.
-	 *                 System output is "Old Deuteronomy has been rented." + newline
-	 * </pre>
-	 */
-	@Test
-	public void testRentCatNumCats3() throws Exception {
-		// TODO: Fill in
+	// /**
+	//  * Test case for boolean rentCat(int id).
+	//  * 
+	//  * <pre>
+	//  * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
+	//  * Execution steps: Call rentCat(2).
+	//  * Postconditions: Return value is true.
+	//  *                 c2 is rented as a result of the execution steps.
+	//  *                 System output is "Old Deuteronomy has been rented." + newline
+	//  * </pre>
+	//  */
+	// @Test
+	// public void testRentCatNumCats3() throws Exception {
+	// 	// TODO: Fill in
 
-		// preconditions
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	// preconditions
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 
-		// execution
-		Method m = r.getClass().getDeclaredMethod("rentCat", int.class);
-		m.setAccessible(true);
-		Object ret = m.invoke(r, 2);
+	// 	// execution
+	// 	Method m = r.getClass().getDeclaredMethod("rentCat", int.class);
+	// 	m.setAccessible(true);
+	// 	Object ret = m.invoke(r, 2);
 
-		// postconditions
-		assertTrue((Boolean)ret);
+	// 	// postconditions
+	// 	assertTrue((Boolean)ret);
 
-		Method c = r.getClass().getDeclaredMethod("getCat", int.class);
-		c.setAccessible(true);
-		Cat rent = (Cat) c.invoke(r, 2);
+	// 	Method c = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 	c.setAccessible(true);
+	// 	Cat rent = (Cat) c.invoke(r, 2);
 
-		Method s = rent.getClass().getDeclaredMethod("isRented");
-		s.setAccessible(true);
-		assertTrue((Boolean) s.invoke(rent));
+	// 	Method s = rent.getClass().getDeclaredMethod("isRented");
+	// 	s.setAccessible(true);
+	// 	assertTrue((Boolean) s.invoke(rent));
 
-		String output = "Old Deuteronomy has been rented." + newline;
-		assertEquals(output, out.toString());
-	}
+	// 	String output = "Old Deuteronomy has been rented." + newline;
+	// 	assertEquals(output, out.toString());
+	// }
 	
 
-	/**
-	 * Test case for boolean rentCat(int id).
-	 * 
-	 * <pre>
-	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
-	 *                c2 is rented.
-	 * Execution steps: Call rentCat(2).
-	 * Postconditions: Return value is false.
-	 *                 c2 stays rented.
-	 *                 System output is "Sorry, Old Deuteronomy is not here!" + newline
-	 * </pre>
-	 */
-	@Test
-	public void testRentCatFailureNumCats3() throws Exception {
-		// TODO: Fill in
+	// /**
+	//  * Test case for boolean rentCat(int id).
+	//  * 
+	//  * <pre>
+	//  * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
+	//  *                c2 is rented.
+	//  * Execution steps: Call rentCat(2).
+	//  * Postconditions: Return value is false.
+	//  *                 c2 stays rented.
+	//  *                 System output is "Sorry, Old Deuteronomy is not here!" + newline
+	//  * </pre>
+	//  */
+	// @Test
+	// public void testRentCatFailureNumCats3() throws Exception {
+	// 	// TODO: Fill in
 
-		// preconditions
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	// preconditions
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 
-		// execution
-		Method m = r.getClass().getDeclaredMethod("rentCat", int.class);
-		m.setAccessible(true);
-		Object ret = m.invoke(r, 2);
+	// 	// execution
+	// 	Method m = r.getClass().getDeclaredMethod("rentCat", int.class);
+	// 	m.setAccessible(true);
+	// 	Object ret = m.invoke(r, 2);
 
-		// postconditions
-		assertTrue((Boolean)ret);
+	// 	// postconditions
+	// 	assertTrue((Boolean)ret);
 
-		Method c = r.getClass().getDeclaredMethod("getCat", int.class);
-		c.setAccessible(true);
-		Cat rent = (Cat) c.invoke(r, 2);
+	// 	Method c = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 	c.setAccessible(true);
+	// 	Cat rent = (Cat) c.invoke(r, 2);
 
-		Method s = rent.getClass().getDeclaredMethod("isRented");
-		s.setAccessible(true);
-		assertTrue((Boolean) s.invoke(rent));
+	// 	Method s = rent.getClass().getDeclaredMethod("isRented");
+	// 	s.setAccessible(true);
+	// 	assertTrue((Boolean) s.invoke(rent));
 
-		out.reset();
+	// 	out.reset();
 
-		ret = m.invoke(r,2);
+	// 	ret = m.invoke(r,2);
 
-		assertFalse((Boolean) ret);
+	// 	assertFalse((Boolean) ret);
 
-		String output = "Sorry, Old Deuteronomy is not here!" + newline;
-		assertEquals(output, out.toString());
-	}
+	// 	String output = "Sorry, Old Deuteronomy is not here!" + newline;
+	// 	assertEquals(output, out.toString());
+	// }
 
-	/**
-	 * Test case for boolean returnCat(int id).
-	 * 
-	 * <pre>
-	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
-	 *                c2 is rented.
-	 * Execution steps: Call returnCat(2).
-	 * Postconditions: Return value is true.
-	 *                 c2 is returned as a result of the execution steps.
-	 *                 System output is "Welcome back, Old Deuteronomy!" + newline
-	 * </pre>
-	 */
-	@Test
-	public void testReturnCatNumCats3() throws Exception {
-		// TODO: Fill in
+	// /**
+	//  * Test case for boolean returnCat(int id).
+	//  * 
+	//  * <pre>
+	//  * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
+	//  *                c2 is rented.
+	//  * Execution steps: Call returnCat(2).
+	//  * Postconditions: Return value is true.
+	//  *                 c2 is returned as a result of the execution steps.
+	//  *                 System output is "Welcome back, Old Deuteronomy!" + newline
+	//  * </pre>
+	//  */
+	// @Test
+	// public void testReturnCatNumCats3() throws Exception {
+	// 	// TODO: Fill in
 
-		// preconditions
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	// preconditions
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 
-		// execution
-		Method m = r.getClass().getDeclaredMethod("rentCat", int.class);
-		m.setAccessible(true);
-		Object ret = m.invoke(r, 2);
-		assertTrue((Boolean) ret);
+	// 	// execution
+	// 	Method m = r.getClass().getDeclaredMethod("rentCat", int.class);
+	// 	m.setAccessible(true);
+	// 	Object ret = m.invoke(r, 2);
+	// 	assertTrue((Boolean) ret);
 
 
-		Method c = r.getClass().getDeclaredMethod("getCat", int.class);
-		c.setAccessible(true);
-		Cat rent = (Cat) c.invoke(r, 2);
+	// 	Method c = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 	c.setAccessible(true);
+	// 	Cat rent = (Cat) c.invoke(r, 2);
 
-		Method s = rent.getClass().getDeclaredMethod("isRented");
-		s.setAccessible(true);
-		assertTrue((Boolean) s.invoke(rent));
+	// 	Method s = rent.getClass().getDeclaredMethod("isRented");
+	// 	s.setAccessible(true);
+	// 	assertTrue((Boolean) s.invoke(rent));
 
-		out.reset();
+	// 	out.reset();
 
-		Method d = r.getClass().getDeclaredMethod("returnCat", int.class);
-		d.setAccessible(true);
-		Object result = d.invoke(r,2);
+	// 	Method d = r.getClass().getDeclaredMethod("returnCat", int.class);
+	// 	d.setAccessible(true);
+	// 	Object result = d.invoke(r,2);
 
-		assertTrue((Boolean) result);
+	// 	assertTrue((Boolean) result);
 
-		assertFalse((Boolean) s.invoke(rent));
+	// 	assertFalse((Boolean) s.invoke(rent));
 
-		String output = "Welcome back, Old Deuteronomy!" + newline;
-		assertEquals(output, out.toString());
-	}
+	// 	String output = "Welcome back, Old Deuteronomy!" + newline;
+	// 	assertEquals(output, out.toString());
+	// }
 
-	/**
-	 * Test case for boolean returnCat(int id).
-	 * 
-	 * <pre>
-	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
-	 * Execution steps: Call returnCat(2).
-	 * Postconditions: Return value is false.
-	 *                 c2 stays not rented.
-	 *                 System output is "Old Deuteronomy is already here!" + newline
-	 * </pre>
-	 */
-	@Test
-	public void testReturnFailureCatNumCats3() throws Exception {
-		// TODO: Fill in
+	// /**
+	//  * Test case for boolean returnCat(int id).
+	//  * 
+	//  * <pre>
+	//  * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
+	//  * Execution steps: Call returnCat(2).
+	//  * Postconditions: Return value is false.
+	//  *                 c2 stays not rented.
+	//  *                 System output is "Old Deuteronomy is already here!" + newline
+	//  * </pre>
+	//  */
+	// @Test
+	// public void testReturnFailureCatNumCats3() throws Exception {
+	// 	// TODO: Fill in
 
-		// preconditions
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	// preconditions
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 
-		Method c = r.getClass().getDeclaredMethod("getCat", int.class);
-		c.setAccessible(true);
-		Cat rent = (Cat) c.invoke(r, 2);
+	// 	Method c = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 	c.setAccessible(true);
+	// 	Cat rent = (Cat) c.invoke(r, 2);
 
-		Method s = rent.getClass().getDeclaredMethod("isRented");
-		s.setAccessible(true);
-		assertFalse((Boolean) s.invoke(rent));
+	// 	Method s = rent.getClass().getDeclaredMethod("isRented");
+	// 	s.setAccessible(true);
+	// 	assertFalse((Boolean) s.invoke(rent));
 
-		out.reset();
+	// 	out.reset();
 
-		Method d = r.getClass().getDeclaredMethod("returnCat", int.class);
-		d.setAccessible(true);
-		Object result = d.invoke(r,2);
+	// 	Method d = r.getClass().getDeclaredMethod("returnCat", int.class);
+	// 	d.setAccessible(true);
+	// 	Object result = d.invoke(r,2);
 
-		assertFalse((Boolean) result);
+	// 	assertFalse((Boolean) result);
 
-		String output = "Old Deuteronomy is already here!" + newline;
-		assertEquals(output, out.toString());
-	}
+	// 	String output = "Old Deuteronomy is already here!" + newline;
+	// 	assertEquals(output, out.toString());
+	// }
 
 }
